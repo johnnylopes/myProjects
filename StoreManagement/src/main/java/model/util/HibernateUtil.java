@@ -30,7 +30,6 @@ public class HibernateUtil {
 		} catch (Throwable e) {
 			throw new SessionException("Could not load the session.", e);
 		}
-
 	}
 
 	public static SessionFactory getSessionFactory() {

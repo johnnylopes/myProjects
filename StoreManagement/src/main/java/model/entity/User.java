@@ -2,6 +2,8 @@ package model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,15 +18,15 @@ import javax.persistence.Table;
 @Entity
 public class User {
 
-	Integer id;
-	String name;
-	String surname;
-	String login;
-	String password;
-	String email;
-	String address;
-	String phoneNumber;
-	UserType type;
+	private Integer id;
+	private String name;
+	private String surname;
+	private String login;
+	private String password;
+	private String email;
+	private String address;
+	private String phoneNumber;
+	private UserType type;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -100,6 +102,7 @@ public class User {
 		this.phoneNumber = phoneNumber;
 	}
 
+	@Enumerated(EnumType.ORDINAL)
 	@Column(name = "NRUSERTYPE")
 	public UserType getType() {
 		return type;

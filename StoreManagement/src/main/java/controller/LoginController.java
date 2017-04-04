@@ -31,6 +31,7 @@ public class LoginController extends HttpServlet {
 		Authenticator authenticator = new Authenticator();
 		AuthenticatorResponse authResp = authenticator.authenticate(username, password);
 		AuthenticatorStatus authStatus = authResp.getStatus();
+
 		if (authStatus.equals(AuthenticatorStatus.AUTHENTICATED)) {
 			reqDispatcher = request.getRequestDispatcher("/success.html");
 		} else {

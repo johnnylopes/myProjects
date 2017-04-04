@@ -5,5 +5,16 @@ package model.entity;
  *
  */
 public enum UserType {
-	CLIENT, EMPLOYEE, ADMIN;
+
+	CLIENT(0), EMPLOYEE(1), ADMIN(2);
+
+	private final int value;
+
+	UserType(int value) {
+		this.value = value;
+	}
+
+	public int getValue() {
+		return value;
+	}
 }
