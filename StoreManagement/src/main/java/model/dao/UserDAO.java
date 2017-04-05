@@ -1,22 +1,15 @@
 package model.dao;
 
-import java.util.List;
-
-import org.hibernate.SessionFactory;
-
 import model.entity.User;
-import model.util.HibernateUtil;
 
 /**
  * @author Johnny Lopes
  *
  */
-public class UserDAO {
+public class UserDAO extends GenericDAO {
 
-	@SuppressWarnings("unchecked")
-	public static List<User> getUsers() {
-		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-		List<User> users = sessionFactory.openSession().createCriteria(User.class).list();
-		return users;
+	@Override
+	public Class<?> getEntityClass() {
+		return User.class;
 	}
 }
